@@ -1,54 +1,32 @@
-# React + TypeScript + Vite
+# Movie Store - เว็บไซต์ขายภาพยนต์
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## รายละเอียดโปรเจกต์
+โปรเจกต์นี้เป็นเว็บไซต์ที่ออกแบบมาเพื่อแสดงข้อมูลของภาพยนต์ โดยมีฟังก์ชันการค้นหาชื่อภาพยนต์ การเพิ่มราคาของหนังแต่ละเรื่อง การเลือกสินค้าใส่ตะกร้า และระบบการลดราคาเมื่อซื้อหลายรายการ พร้อมทั้งฟังก์ชันการเก็บข้อมูลตะกร้าเมื่อปิดเว็บไซต์และเปิดใหม่ รวมถึงการแสดง Popup สำหรับการสั่งซื้อสินค้า
 
-Currently, two official plugins are available:
+## ฟีเจอร์
+1. **การค้นหาชื่อภาพยนต์**: ผู้ใช้สามารถค้นหาชื่อภาพยนต์ที่ต้องการได้ง่าย ๆ
+2. **การเพิ่มราคาของหนังแต่ละเรื่อง**: ระบบจะรองรับการเพิ่มราคาของภาพยนต์แต่ละเรื่องในฐานข้อมูล
+3. **การเลือกสินค้าใส่ตะกร้า**: ผู้ใช้สามารถเลือกภาพยนต์และเพิ่มไปยังตะกร้าสินค้าได้
+4. **การลดราคาตามจำนวนสินค้า**:
+   - ซื้อหนังมากกว่า 3 รายการ ลด 10%
+   - ซื้อหนังมากกว่า 5 รายการ ลด 20%
+5. **เก็บข้อมูลตะกร้าสินค้าเมื่อปิดเว็บไซต์**: ตะกร้าสินค้าที่ผู้ใช้เลือกจะยังคงอยู่ในตะกร้าทั้งในกรณีที่ปิดและเปิดเว็บไซต์ใหม่
+6. **การลบสินค้าในตะกร้า**: ผู้ใช้สามารถกด "Clear" เพื่อลบสินค้าทั้งหมดในตะกร้า
+7. **Popup การสั่งซื้อสินค้า**: เมื่อผู้ใช้กดสั่งซื้อสินค้า ระบบจะแสดง Popup ที่บอกว่าต้องโอนเงินไปที่ไหน และแสดงตัวเลขเวลานับถอยหลัง 1 นาทีให้ผู้ใช้
+8. **การลบตะกร้าอัตโนมัติ**: หากหมดเวลา 1 นาทีหลังจากที่ผู้ใช้ทำการสั่งซื้อ ตะกร้าสินค้าจะถูกลบออกโดยอัตโนมัติ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## เทคโนโลยีที่ใช้ 
+- **React**: ใช้ React สำหรับการพัฒนา UI ของเว็บไซต์
+- **Tailwind CSS**: ใช้ Tailwind CSS สำหรับการตกแต่งและออกแบบหน้าเว็บให้มีความสวยงามและปรับแต่งได้ง่าย
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## การติดตั้ง
+1. Clone repository นี้:
+   ```bash
+   git clone https://github.com/Fexx745/Movie.git
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. ติดตั้ง dependencies:
+    - npm i
+    - npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+ไปที่ https://movie-store-chatupon.netlify.app เพื่อดูเว็บไซต์ หรือเล่นที่ เว็บไซต์

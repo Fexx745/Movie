@@ -38,11 +38,18 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-blue-600 text-white py-6">
-        <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold">Movie Shop</h1>
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-md">
+        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <h1 className="text-4xl font-extrabold tracking-wide">Movie Shop</h1>
+          </div>
+          <nav className="hidden md:flex space-x-6 text-lg">
+            <a href="/" className="hover:text-yellow-300 transition duration-300">Home</a>
+            <a href="/" className="hover:text-yellow-300 transition duration-300">Movies</a>
+          </nav>
         </div>
-      </header> 
+      </header>
+
       <main className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-3/4">
@@ -59,7 +66,7 @@ const App: React.FC = () => {
               totalPages={totalPages}
               onPageChange={handlePageChange}
             />
-          </div> 
+          </div>
           <div className="lg:w-1/4 sticky top-8 self-start">
             <ShoppingCart
               cart={cart}
@@ -70,7 +77,7 @@ const App: React.FC = () => {
             />
           </div>
         </div>
-      </main> 
+      </main>
       <footer className="bg-gray-800 text-white py-4 mt-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; {new Date().getFullYear()} Movie Shop. All rights reserved.</p>

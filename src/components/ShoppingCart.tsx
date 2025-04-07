@@ -87,7 +87,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({
                             <span>{totalInfo.subtotal.toFixed(2)} ฿</span>
                         </div>
                         {totalInfo.discount > 0 && (
-                            <div className="flex justify-between mb-2 text-blue-500 font-semibold">
+                            <div className="flex justify-between mb-2 text-yellow-500 font-semibold">
                                 <span>
                                     ลดราคา ({totalInfo.totalItems > 5 ? '20%' : '10%'}):
                                 </span>
@@ -117,9 +117,11 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({
             )}
 
             <CheckoutModal
+                cart={cart}
                 isOpen={showModal}
                 onClose={() => setShowModal(false)}
-                total={totalInfo.total}
+                totalInfo={totalInfo}
+                onClear={onClear}
             />
         </div>
     );
